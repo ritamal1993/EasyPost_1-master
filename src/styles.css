@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+body { margin: 0; }
+
+.right-aligned-header > .mat-content {
+  justify-content: space-between;
+}
+
+.mat-content > mat-panel-title, .mat-content > mat-panel-description {
+  flex: 0 0 auto;
+}
+
+html, body { height: 100%;
+  background-image: url("newhomeee.png");
+  background-position: center;
+ background-repeat: no-repeat;
+/*  background-attachment: scroll;*/
+ background-attachment: fixed;
+  background-size: 100%;
+
+
+                                }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(app/home/fonts/Simplicity.otf);
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(app/home/fonts/CuteFunnypu.otf);
+  font-weight: bold;
+}
+
+
+.bottom{
+  margin:0;
+}
+
+.top{
+  margin: 0 auto;
+  position: absolute;
+  top: 34px;
+  left: 30px;
+  text-align:center;
+}
+canvas[_ngcontent-c16] {
+  border: 2px solid rgba(0, 0, 0, 0);
+  transition: 300ms;
+  border-radius: 4px;
+}
+.canvas{
+  border: 2px solid rgba(0,0,0,0.12);
+  transition: 300ms;
+  border-radius: 4px;
+}
+.canvas[_ngcontent] {
+  border: 2px solid rgba(0,0,0,0.12);
+  transition: 300ms;
+  border-radius: 4px;
+}
+canvas[_ngcontent-c16] {
+  border: 2px solid rgba(0,0,0,0);
+  transition: 300ms;
+  border-radius: 4px;
+}

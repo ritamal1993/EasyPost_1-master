@@ -1,0 +1,31 @@
+<mat-toolbar>
+  <span>
+
+    <div class="droplet">
+      <a routerLink="/">EasyPost</a></div>
+  </span>
+  <span class="spacer"></span>
+  <ul>
+
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Post</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/posts" routerLinkActive="mat-accent">Posts</a>
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/auth/login" routerLinkActive="mat-accent">Login</a>
+    </li>
+
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/auth/signup" routerLinkActive="mat-accent">Signup</a>
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/profile" routerLinkActive="mat-accent">Profile</a>
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <button style="font-family: myFirstFont" mat-button (click)="onLogout()">Logout</button>
+    </li>
+
+  </ul>
+</mat-toolbar>

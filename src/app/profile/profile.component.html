@@ -1,0 +1,57 @@
+<!--
+    Good use of ng-repeat & ng-switch to edit profile data within a object-array.
+    @DonRPage
+-->
+<body ng-app="employeeApp" ng-controller="employeeController">
+<div class="content-wrapper">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 text-center">
+
+  <h2>Profile</h2>
+
+  <div class="everyone-wrapper">
+    <section ng-switch on="(editIndex == $index)"
+             ng-repeat="person in employeeArray track by $index"
+             class="clearfix">
+
+      <div  class="info-wrapper">
+        <!-- Default Information -->
+        <h3 ng-switch-default class="Username"> <br>{{ currentUser['userName'] }}</h3>
+       <br>
+        <br>
+
+        <p ng-switch-default class="p-desc"></p>
+        <span class="text-center" ng-switch-default class="from">From:{{ currentUser['country'] }}</span>
+
+        <span  class="text-center" ng-switch-default class="email">Email:  {{ currentUser['email'] }}</span>
+
+      </div>
+    </section>
+    <h2>where i'm from?</h2>
+    <app-map [currentUserLng]="currentUser.lng"[currentUserLat]="currentUser.lat" ]></app-map>
+    <p>
+      What is Lorem Ipsum?
+
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+   ard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+    </p>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

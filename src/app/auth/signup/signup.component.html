@@ -1,0 +1,143 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
+    <mat-form-field>
+      <input matInput name="userName" ngModel type="userName" placeholder="User Name" #userNameInput="ngModel" required userName>
+      <mat-error *ngIf="userNameInput.invalid">Please enter a valid user name.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+      <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+    </mat-form-field>
+
+
+<!------------------------------------------------------------------------------------------------------------>
+
+    <html>
+
+    <head>
+
+      <title></title>
+
+      <meta charset="utf-8" />
+
+      <script type='text/javascript'>
+
+        function GetMap() {
+
+          Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', {
+
+            callback: function () {
+
+              var manager = new Microsoft.Maps.AutosuggestManager({
+
+                autoDetectLocation: false
+
+              });
+
+              manager.attachAutosuggest('#searchBox', '#searchBoxContainer', suggestionSelected);
+
+            },
+
+            errorCallback: function(msg){
+
+              alert(msg);
+
+            }
+
+          });
+
+        }
+
+
+
+        function suggestionSelected(result) {
+
+          //Populate the address textbox values.
+
+          // document.getElementById('addressLineTbx').value = result.address.addressLine || '';
+
+          // document.getElementById('cityTbx').value = result.address.locality || '';
+
+          //document.getElementById('countyTbx').value = result.address.district || '';
+
+          //document.getElementById('stateTbx').value = result.address.adminDistrict || '';
+
+          //document.getElementById('postalCodeTbx').value = result.address.postalCode || '';
+
+          document.getElementById('countryTbx').value = result.address.countryRegion || '';
+
+
+
+        }
+
+      </script>
+
+      <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[AtbfKo7ohYutD1Ajl494gzUAWB6u9IjfoiV4VoJ0EpmBFo_VqXDxtTlGx5z5uQW-]' async defer></script>
+
+
+
+    </head>
+
+    <body style="background: white">
+<div>Country Search:</div>
+    <div id='searchBoxContainer'>
+
+      <input type='country' id='searchBox'/>
+
+    </div>
+
+
+
+    <table class="addressForm">
+
+
+
+
+    </table>
+
+    <mat-form-field>
+      <tr> <td><input matInput name="country" ngModel type="country" id="countryTbx" placeholder="Country" #countryInput="ngModel" required country></td></tr>
+      <mat-error *ngIf="countryInput.invalid"></mat-error>
+    </mat-form-field>
+
+
+
+    </body>
+
+    </html>
+
+
+
+
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+
+ <!--   <mat-form-field>
+      <input matInput name="country" ngModel type="country" placeholder="Country" #countryInput="ngModel" required country>
+      <mat-error *ngIf="countryInput.invalid">Please enter a valid country.</mat-error>
+    </mat-form-field>-->
+
+
+
+
+
+
+
+
+    <mat-form-field>
+      <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
+      <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+    </mat-form-field>
+<div>
+    <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Signup</button>
+</div>
+  </form>
+
+</mat-card>

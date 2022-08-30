@@ -1,0 +1,30 @@
+
+
+line {
+  fill: rgba(116, 165, 110, 0.57);
+  border-radius: 20px;
+
+}
+line:hover {
+  fill: rgba(197, 219, 192, 0.64);
+}
+.axis-title {
+  fill: none;
+  stroke: black;
+  stroke-width:1px;
+  font-family: myFirstFont;
+  font-size: 18px;
+
+}
+
+h2,p{
+  font-family: myFirstFont;
+}
+h2{
+  background-blend-mode: lighten;
+}
+text{
+  font-family: myFirstFont;
+  font-size:18px;
+}
+

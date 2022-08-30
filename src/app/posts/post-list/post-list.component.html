@@ -1,0 +1,68 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+
+
+<div class="form-control">
+  <input  type="text"  placeholder="Search By Post Title"
+          style="width:300px; border: 1px groove;
+  border-radius: 20px;" [(ngModel)]="this.postTitle" />
+  <input  type="text" placeholder="Search By Post Content"
+          style="width:300px; border: 1px groove;
+  border-radius: 20px;" [(ngModel)]="this.postContent" />
+
+<mat-checkbox (click)="image = !image" checked="checked">include image</mat-checkbox>
+  <mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"
+                 *ngIf="posts.length > 0"></mat-paginator>
+</div>
+
+<mat-accordion multi="true" *ngIf="posts.length > 0 && !isLoading" >
+  <mat-expansion-panel *ngFor="let post of posts | PostTitleFilter:postTitle | postContentFilter:postContent | postImageFilter:image">
+
+    <mat-expansion-panel-header class="right-aligned-header">
+      <mat-panel-title>
+        {{ post.title }}
+      </mat-panel-title>
+      <mat-panel-description>
+        Posted by:  {{ post.creator.userName }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="post-image">
+      <img [src]="post.imagePath" [alt]="post.title">
+    </div>
+    <p>{{ post.content }}</p>
+
+    <app-comment [postId]="post.id"></app-comment>
+
+
+<tweet></tweet>
+    <mat-action-row *ngIf="(userIsAuthenticated && userId === post.creator._id)">
+      <a mat-button color="primary" [routerLink]="['/edit', post.id]">EDIT</a>
+      <button mat-button color="warn" (click)="onDelete(post.id)">DELETE</button>
+
+    </mat-action-row>
+
+    <mat-action-row *ngIf="comments.comments.postId === post.id">
+      <mat-expansion-panel-header class="right-aligned-header">
+
+        <mat-panel-title>
+          {{comments.comments[0].comment}}
+        </mat-panel-title>
+        <mat-panel-title>
+          {{comments.comments[0].commentUser }}
+        </mat-panel-title>
+        <mat-panel-title>
+          {{comments.comments[0].commentType }}
+        </mat-panel-title>
+        <mat-panel-title>
+          {{comments.comments[0].publishDate }}
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+
+    </mat-action-row>
+
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !isLoading">No posts added yet!</p>

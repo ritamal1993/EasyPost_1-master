@@ -1,0 +1,54 @@
+
+<ul class="comment-section" *ngFor="let c of commentsPerPost">
+
+  <li class="comment user-comment">
+    <div class="info">
+      <a href="#"> {{c.commentUser }}</a>
+      <span> {{c.publishDate }}</span>
+      <span>{{ c.commentType }}</span>
+    </div>
+
+    <p> {{c.comment}}</p>
+  </li>
+
+</ul>
+<!--<mat-action-row *ngFor="let c of commentsPerPost">
+
+  <mat-panel-title>
+    {{c.comment}}
+  </mat-panel-title>
+  <mat-panel-title>
+    {{c.commentUser }}
+  </mat-panel-title>
+
+  <mat-panel-title>
+    {{c.commentType }}
+  </mat-panel-title>
+  <mat-panel-title>
+    {{c.publishDate }}
+  </mat-panel-title>
+
+
+</mat-action-row>
+-->
+<div>
+  <div class="input-area">
+    <form (submit)="addComment()" (submit)="onSaveComment()" name="messageForm" #messageForm="ngForm">
+      <div>
+        <input type="text" placeholder="Your name" name="name" id="name" [(ngModel)]="comment.commentUser">
+        <div class="form-group shadow-textarea">
+          <textarea class="form-control z-depth-1"  rows="3" placeholder="Write something here..."type="text" name="message"id="message" [(ngModel)]="comment.comment" ></textarea>
+        </div>
+
+      </div>
+<nav>
+      <button>
+        <span data-feather="send"></span>
+      </button>
+</nav>
+    </form>
+  </div>
+
+</div>
+
+

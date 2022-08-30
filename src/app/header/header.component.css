@@ -1,0 +1,42 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+font-min-size: small;
+
+
+}
+.mat-toolbar{
+  background-color: rgba(147, 199, 146, 0.47);
+}
+a {
+  font-family: myFirstFont;
+  text-decoration: none;
+  color: #323232;
+}
+
+ul {
+  display: flex;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+
+.droplet {
+  background: rgba(198,222,195,0.07);
+  border-radius: 2% 30%;
+  height: 50px;
+  margin: 50px;
+  transition: all 3s;
+  transition-timing: ease-in-out;
+  width: 100px;
+}
+
+:hover {
+   transform: rotate(1080deg);
+ }
+
+
+

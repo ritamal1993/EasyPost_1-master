@@ -1,0 +1,124 @@
+.comment{
+  display: flex;
+}
+.comment.user-comment .info{
+  order: 1;
+}
+.comment.user-comment p {
+  background-color: #f3f3f3;
+}
+.comment p {
+  line-height: 1.5;
+  padding: 18px 22px;
+  width: 50%;
+  position: relative;
+  word-wrap: break-word;
+}
+.comment.user-comment {
+  color: #808080;
+}
+.comment-section {
+  list-style: none;
+}
+
+.comment .info a {
+  display: block;
+  text-decoration: none;
+  color: #656c71;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0 3px 0;
+}
+
+
+.comment .info span {
+
+  font-size: 11px;
+  color: #9ca7af;
+
+}
+.comment.user-comment p {
+  background-color: #f3f3f3;
+}
+.comment p {
+  line-height: 1.5;
+  padding: 18px 22px;
+  width: 30%;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.user-comment p::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid #f3f3f3;
+  left: -8px;
+  top: 18px;
+}
+.comment.user-comment p{
+  order: 2;
+}
+.comment p{
+  width: 30%;
+}
+input {
+  width: 100%;
+  border: none;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Roboto Condensed', sans-serif;
+  border-radius: 15px;
+}
+     focus{
+   outline: none;
+ }
+.shadow-textarea textarea.form-control::placeholder {
+  font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+  padding-left: 0.8rem;
+}
+.input-area {
+  width: 100%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+}
+input {
+@extend %input;
+  margin: 0 0 10px 0;
+}
+textarea {
+@extend %input;
+}
+
+ button {
+  float: right;
+  background-color: #87bae1;
+  box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  border: 0;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 25px;
+  margin-top: 18px;
+}
+.mat-button.mat-accent, .mat-icon-button.mat-accent, .mat-stroked-button.mat-accent {
+  color: #00f6ff;
+}

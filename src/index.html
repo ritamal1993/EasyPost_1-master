@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <link rel="canonical" href="https://material.angular.io">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>EasyPost</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="black-skin">
+
+
+
+    <meta charset = "UTF-8">
+    <title>backgroundImage.html</title>
+    <style type = "text/css" >
+      body {
+        background-image: url("newhomeee.png");
+
+
+        background-size: 100%;
+      }
+      </style>
+
+
+ <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+ <script src="node_modules/chart.js/src/chart.js"></script>
+ <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+
+
+
+    <script type='text/javascript'>
+
+      function GetMap() {
+
+        Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', {
+
+          callback: function () {
+
+            var manager = new Microsoft.Maps.AutosuggestManager({
+
+              autoDetectLocation: false
+
+            });
+
+            manager.attachAutosuggest('#searchBox', '#searchBoxContainer', suggestionSelected);
+
+          },
+
+          errorCallback: function(msg){
+
+            // alert(msg);
+
+          }
+
+        });
+
+      }
+
+
+
+      function suggestionSelected(result) {
+
+        //Populate the address textbox values.
+
+       // document.getElementById('addressLineTbx').value = result.address.addressLine || '';
+
+     //   document.getElementById('cityTbx').value = result.address.locality || '';
+
+      //  document.getElementById('countyTbx').value = result.address.district || '';
+
+     //   document.getElementById('stateTbx').value = result.address.adminDistrict || '';
+
+      //  document.getElementById('postalCodeTbx').value = result.address.postalCode || '';
+
+        document.getElementById('countryTbx').value = result.address.countryRegion || '';
+
+
+
+      }
+
+    </script>
+
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[AtbfKo7ohYutD1Ajl494gzUAWB6u9IjfoiV4VoJ0EpmBFo_VqXDxtTlGx5z5uQW-]' async defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <app-root></app-root>
+
+
+</body>
+
+
+</html>

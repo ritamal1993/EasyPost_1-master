@@ -1,0 +1,43 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>autosuggestuiwithoutmapHTML</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+  <style type='search/css'>body{margin:0;padding:0;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif,serif}</style>
+</head>
+<body>
+<div id='printoutPanel'></div>
+<div id='searchBoxContainer'><label for='searchBox'></label><input type= 'search' id= 'searchBox'/></div>
+
+<div id='myMap' style='width: 100vw; height: 100vh;'></div>
+<script type='text/javascript'>
+  function loadMapScenario() {
+    Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', {
+      callback: onLoad,
+      errorCallback: onError
+    });
+    function onLoad() {
+      const options = {maxResults: 5};
+      const manager = new Microsoft.Maps.AutosuggestManager(options);
+      manager.attachAutosuggest('#searchBox', '#searchBoxContainer', selectedSuggestion);
+    }
+    function onError(message) {
+      document.getElementById('printoutPanel').innerHTML = message;
+    }
+    function selectedSuggestion(suggestionResult) {
+      document.getElementById('printoutPanel').innerHTML =
+        'Suggestion: ' + suggestionResult.formattedSuggestion +
+        '<br> Lat: ' + suggestionResult.location.latitude +
+        '<br> Lon: ' + suggestionResult.location.longitude;
+    }
+
+  }
+</script>
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AtbfKo7ohYutD1Ajl494gzUAWB6u9IjfoiV4VoJ0EpmBFo_VqXDxtTlGx5z5uQW-&callback=loadMapScenario' async defer></script>
+</body>
+</html>
+<!--AIzaSyCs8Rb24l9BNZijFyV_-MK60nLYtqQYaec--><!--google apikey>

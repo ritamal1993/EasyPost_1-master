@@ -1,0 +1,31 @@
+.bar {
+  fill: rgba(116, 165, 110, 0.57);
+  border-radius: 20px;
+
+}
+.bar:hover {
+   fill: rgba(197, 219, 192, 0.64);
+ }
+.axis-title {
+    fill: none;
+    stroke: rgba(0, 0, 0, 0);
+    stroke-width:1px;
+  font-family: myFirstFont;
+  font-size: 18px;
+
+}
+
+h2,p{
+  font-family: myFirstFont;
+}
+h2{
+  background-blend-mode: lighten;
+}
+text{
+  font-family: myFirstFont;
+  font-size:18px;
+
+}
+.col-lg-8{
+  border-radius: 30px;
+}

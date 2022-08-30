@@ -1,0 +1,20 @@
+<i class="fa"></i>
+<div style="height: 600px">
+  <x-map #xmap [Options]="_options" [Box]="_box">
+    <x-map-marker
+      [Latitude]=currentUserLat
+      [Longitude]=currentUserLng
+      [Title]="'My Location'"
+      [IconInfo]="_iconInfo">
+      <x-info-box
+        [DisableAutoPan]="true"
+        [Title]="'My InfoBox'"
+        [Description]="'Hi, this is the content of the <strong>info window</strong>. It is your responsibility to implement functionality such as close, etc...'">
+        <x-info-box-action [Label]="'Click Me'" (ActionClicked)="_click()"></x-info-box-action>
+      </x-info-box>
+    </x-map-marker>
+  </x-map>
+</div>
+
+
+
